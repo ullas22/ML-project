@@ -1,12 +1,10 @@
-from alpine:latest
+from python:3.8.0-buster
 
-RUN apk add --no-cashe python3-dev\
-    && pip3 install --upgrade pip3
+WORKDIR /app
 
-   WORKDIR /app
-   COPY . /app
-   RUN pip3 --no-cashe-dir install -r requirements.txt
-   EXPOSE 5000
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python"]
-CMD [app.py]    
+COPY /app .
+
+CMD ["pyton", "app.py"]
