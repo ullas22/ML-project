@@ -1,0 +1,58 @@
+<html>
+<div class="Login">
+
+  <div style="background-color:chocolate; font-size: 14px;line-height: 1.6;margin: 20px 0; text-align: center;"> 
+
+      <h2>Heart Disease Prediction</h2>
+    <h3>Enter the following values to predict</h3>
+    <form action="{{url_for('predict')}}" method="post">
+        
+          <br>
+              <input type="text" id="age" name="age" placeholder="--Enter Age--" required >
+          </br>
+          <br>
+              <select id="sex" name="sex">
+                <option>--Enter Sex--</option>  
+                <option value="0">male</option>
+                <option value="1">Female</option>
+              </select>
+          </br>
+          <br>
+              <select id="cp" name="cp">
+                <option> --Enter Chest Pain type-- </option>  
+                <option value="0"> typical type 1 </option>
+                <option value="1">typical type agina</option>
+                <option value="2">non-agina pain</option>
+                <option value="3">asymptomatic</option>
+              </select>
+          </br>
+          <br>
+              <input type="text" id="trestbps" name="trestbps" placeholder="--Enter blood pressure value--" required>
+          </br>
+          <br>    
+              <input type="text" id="chol" name="chol" placeholder="--Enter cholestrol value--" required>
+          </br> 
+          <br> 
+              <select id="fbs" name="fbs">
+                <option>--Enter fasting blood sugur--</option>
+                <option value="1">  ≥ 120 mg/dl </option>
+                <option value="0">≤ 120 mg/dl</option>
+              </select>
+          </br>
+          <br>
+              <select id="restecg" name="restecg">
+                <option>--Enter Resting electrographic results--</option>
+                <option value="0">  Normal </option>
+                <option value="1">  having ST_T wave abnormal </option>
+                <option value="2">left ventricular  hypertrophy </option>
+              </select>
+          </br>
+ 
+        <button type="Submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+    </body> 
+    {{predicted_output}}
+   </div>
+  </div>  
+</html>
+      
